@@ -1,8 +1,11 @@
 import React from 'react'
 import './ProductCategory.css'
+import Banner from '../../components/banner/Banner'
 const ProductCategory = () => {
   return (
-    <div>ProductCategory</div>
+    <div>
+        <Banner/>
+    </div>
   )
 }
 

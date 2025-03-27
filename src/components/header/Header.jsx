@@ -9,7 +9,7 @@ const Header = () => {
             </header>
             {/* navbar-light : Navbar is light colour you want the text to be dark
               , navbar-dark : Navbar is dark colour, you want the text to be light */}
-            <nav className="navbar navbar-expand-lg bg-success  mb-3 navbar-dark">
+            <nav className="navbar navbar-expand-lg bg-success navbar-dark">
                 <div className="container">
                     <NavLink className="navbar-brand" to="/">Lazamall</NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
