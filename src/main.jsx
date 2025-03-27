@@ -21,19 +21,19 @@ const router = createBrowserRouter([
       },
       {
         path:'/categories/electronics',
-        element:<ProductCategory/>
+        element:<ProductCategory title="Electronics" subtitle="Collection of Electronics" image="product2.jpg"/>
       },
       {
         path:'/categories/jewelery',
-        element:<ProductCategory/>
+        element:<ProductCategory title="Jewelery" subtitle="Collection of Jewelery" image="product3.jpg"/>
       },
       {
         path:"/categories/men's clothing",
-        element:<ProductCategory/>
+        element:<ProductCategory title="Men's clothing" subtitle="Collection of Men's clothing" image="product1.jpg"/>
       },
       {
         path:"/categories/women's clothing",
-        element:<ProductCategory/>
+        element:<ProductCategory title="Women's clothing" subtitle="Collection of Women's clothing" image="product2.jpg"/>
       },
       {
         path:"/products/:id",

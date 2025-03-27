@@ -1,11 +1,11 @@
 import React from 'react'
 import './Banner.css'
 
-const Banner = () => {
+const Banner = ({title, subtitle, image}) => {
   return (
     <div className='jumbotron text-center text-warning'>
-        <h1 className='display-4'>Lazamall</h1>
-        <p className='lead'>Shop til you drop with us!</p>
+        <h1 className='display-4'>{title}</h1>
+        <p className='lead'>{subtitle}</p>
     </div>
   )
 }

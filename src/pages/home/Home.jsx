@@ -4,7 +4,7 @@ import Banner from '../../components/banner/Banner'
 const Home = () => {
   return (
     <div>
-        <Banner/>
+        <Banner title="Lazamall" subtitle="Shop till you drop" image="banner1.jpg"/>
     </div>
   )
 }
