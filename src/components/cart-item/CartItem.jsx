@@ -7,7 +7,7 @@ const CartItem = ({ cartItem }) => {
   const { dispatch } = useCart()
 
   return (
-    <div className="card mb-4 cart-item">
+    <div className="card mb-4 cart-item p-3">
       <div className="row g-0 align-items-center">
         <div className="col-md-3 text-center">
           <img
