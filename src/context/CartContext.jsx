@@ -67,9 +67,10 @@ const cartProvider = ({children}) => {
         
 
             case 'EMPTY_CART':
-
-            return;
-
+                return {
+                    ...state,
+                    cart:[]
+                }
             default:
             return state;
         }
