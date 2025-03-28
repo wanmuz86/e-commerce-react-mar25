@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFetch } from '../../hooks/useFetch'
+import Card from '../card/Card'
 
 const Featured = () => {
 
@@ -16,7 +17,9 @@ const Featured = () => {
             : loading 
             ? <p>Loading....</p>
             : data?.map(val=>    // ?. (if it is not nul)
-                <li key={val.id}>{val.title}</li>)
+                <Card product={val} key={val.id}/>
+                
+                )
         }
     </div>
   )
