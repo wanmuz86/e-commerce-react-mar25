@@ -13,7 +13,6 @@ const useFetch = (url)=>{
     // loading state
     const [loading,setLoading] = useState(false)
 
-
     // Everytime there is a change in url, this will be called
     useEffect(()=>{
 
@@ -34,7 +33,7 @@ const useFetch = (url)=>{
             }
             setLoading(false)
         }
-        
+
         // Function invocation
         fetchData(url)
 
@@ -43,3 +42,5 @@ const useFetch = (url)=>{
     // after API call
     return {data,error,loading}
 }
+
+export default useFetch;
