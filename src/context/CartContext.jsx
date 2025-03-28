@@ -1,10 +1,10 @@
 import { createContext, useReducer, useContext } from "react";
 
 // Create context that will be used by the components
-const cartContext = createContext()
+const CartContext = createContext()
 
 // Provider where we will define the state and the actions (inside reducer)
-const cartProvider = ({children}) => {
+const CartProvider = ({children}) => {
 
     const initialState = {
         cart:[]
@@ -64,8 +64,7 @@ const cartProvider = ({children}) => {
                 }
 
                 // If not I will remove the quantity by 1
-        
-
+    
             case 'EMPTY_CART':
                 return {
                     ...state,
@@ -74,9 +73,29 @@ const cartProvider = ({children}) => {
             default:
             return state;
         }
+        
 
     }
 
-    return state
+  
 
+const [state,dispatch]  = useReducer(cartReducer, initialState)
+
+return (
+    <CartContext.Provider value={{state,dispatch}}>
+        {children}
+    </CartContext.Provider>
+)
 }
+
+// Create the custom hook to check the usage of reducer and state within the <CartProvider>
+
+const useCart = () => {
+    const context = useContext(CartContext);
+    if (!context){
+        throw new Error('useCart needs to be used in Cart Provider')
+    }
+    return context
+}
+
+export {CartProvider,useCart}
