@@ -9,12 +9,12 @@ const Cart = () => {
     <div className='container'>
       <h2>Cart</h2>
       {
-        state.cart?.length === 0 ?
+        state.cart.length === 0 ?
         <p>No item in the cart yet. Start shopping now!</p>
         :
         <div>
           {
-            state.cart?.map(val=><p>{val.item.title} - {val.quantity}</p>)
+            state.cart.map(val=><p>{val.item.title} - {val.quantity}</p>)
           }
         </div>
       }

@@ -19,7 +19,7 @@ const CartProvider = ({children}) => {
                
                 // If Item is in the cart (If it is !== -1, it is in the cart)
                 if (existingItemIndexAdd !== -1 ){
-                   const updatedCart = {...state.cart};
+                   const updatedCart = [...state.cart]; // copy of array
                    // Add the quantity by 1
                    updatedCart[existingItemIndexAdd].quantity +=1
                    // Update back the cart in state
@@ -37,16 +37,13 @@ const CartProvider = ({children}) => {
                         cart:[...state.cart, action.payload]
                     }
                 }
-                
-
-            return;
 
             case 'REMOVE_ITEM':
                 // If the item is in the cart,  get the index
                 // Check the quantity, if  the quantity is 1 = I will remove it from the cart
                 const existingItemIndexDel = state.cart.findIndex(val=>val.item.id === action.payload.item.id)
                 if (existingItemIndexDel >= -1){
-                    const updatedCart = {...updatedCart};
+                    const updatedCart = [...updatedCart];
                     if (updatedCart[existingItemIndexDel].quantity > 1){
                         updatedCart[existingItemIndexDel].quantity -= 1
                         return {
@@ -75,7 +72,7 @@ const CartProvider = ({children}) => {
         }
     
     }
-    
+
 const [state,dispatch]  = useReducer(cartReducer, initialState)
 
 return (
