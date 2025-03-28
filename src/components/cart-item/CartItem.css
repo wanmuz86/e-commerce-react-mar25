@@ -1,0 +1,13 @@
+.cart-item {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .cart-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item .quantity {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 500;
+  }
