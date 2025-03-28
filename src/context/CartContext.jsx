@@ -42,8 +42,29 @@ const cartProvider = ({children}) => {
             return;
 
             case 'REMOVE_ITEM':
+                // If the item is in the cart,  get the index
+                // Check the quantity, if  the quantity is 1 = I will remove it from the cart
+                const existingItemIndexDel = state.cart.findIndex(val=>val.item.id === action.payload.item.id)
+                if (existingItemIndexDel >= -1){
+                    const updatedCart = {...updatedCart};
+                    if (updatedCart[existingItemIndexDel].quantity > 1){
+                        updatedCart[existingItemIndexDel].quantity -= 1
+                        return {
+                            ...state,
+                            cart:updatedCart
+                        }
+                    }
+                    else {
+                        // remove the item from the cart
+                        return {
+                            ...state,
+                            cart:state.cart.filter(val=> val.item.id !== action.payload.id)
+                        }
+                    }
+                }
 
-            return;
+                // If not I will remove the quantity by 1
+        
 
             case 'EMPTY_CART':
 
