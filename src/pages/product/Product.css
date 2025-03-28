@@ -1,0 +1,17 @@
+.product-img {
+    max-height: 400px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+  }
+  
+  .product-page h2 {
+    font-weight: 600;
+  }
+  
+  .product-page p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
