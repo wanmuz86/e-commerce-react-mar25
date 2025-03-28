@@ -77,8 +77,18 @@ const CartProvider = ({children}) => {
 
 const [state,dispatch]  = useReducer(cartReducer, initialState)
 
+// What is Derived/Computed State?
+// Derived state is any data that isn't stored directly in the state, 
+//but is calculated from the existing state. 
+//You're not storing totalPrice or totalItemsInCart in the state object directly — 
+// you're computing them based on state.cart.
+
+
+const totalItemsInCart = state.cart.reduce((acc,val)=> acc+val.quantity, 0)
+const totalPrice = state.cart.reduce((acc,val) => acc + (val.item.price * val.quantity)+acc,0)
+
 return (
-    <CartContext.Provider value={{state,dispatch}}>
+    <CartContext.Provider value={{state,dispatch, totalItemsInCart, totalPrice}}>
         {children}
     </CartContext.Provider>
 )
