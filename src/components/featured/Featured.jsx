@@ -16,11 +16,17 @@ const Featured = () => {
             <p>Something is wrong</p>
             : loading 
             ? <p>Loading....</p>
-            : data?.map(val=>    // ?. (if it is not nul)
-                <Card product={val} key={val.id}/>
-                
-                )
-        }
+            : 
+            <div className="row row-gap-3">
+            {
+                data?.map(val=>    // ?. (if it is not nul)
+               <div className='col-3' key={val.id}>
+                 <Card product={val}/>
+                </div>
+            )
+            }
+             </div>
+             }
     </div>
   )
 }

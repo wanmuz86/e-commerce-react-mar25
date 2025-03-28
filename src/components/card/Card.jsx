@@ -15,7 +15,7 @@ const Card = ({ product }) => {
         <p className="card-text text-muted mb-1">{product.category}</p>
         <p className="card-text fw-bold text-primary">USD {product.price}</p>
         <div className="mt-auto d-flex gap-2">
-          <Link to={`./product/${product.id}`} className="btn btn-sm btn-outline-primary w-100">
+          <Link to={`./products/${product.id}`} className="btn btn-sm btn-outline-primary w-100">
             More Detail
           </Link>
           <button className="btn btn-sm btn-primary w-100">
