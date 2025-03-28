@@ -1,8 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css' // <- for custom styles
+import {useCart} from '../../context/CartContext'
 
 const Card = ({ product }) => {
+    const {dispatch} = useCart()
+
+    const addItemToCart = () => {
+        dispatch({type:'ADD_ITEM',payload:{item:product,quantity:1}})
+    }
   return (
     <div className="card product-card h-100">
       <img
@@ -18,7 +24,7 @@ const Card = ({ product }) => {
           <Link to={`./products/${product.id}`} className="btn btn-sm btn-outline-primary w-100">
             More Detail
           </Link>
-          <button className="btn btn-sm btn-primary w-100">
+          <button className="btn btn-sm btn-primary w-100" onClick={addItemToCart}>
             Add to Cart
           </button>
         </div>

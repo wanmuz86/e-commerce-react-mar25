@@ -73,12 +73,9 @@ const CartProvider = ({children}) => {
             default:
             return state;
         }
-        
-
+    
     }
-
-  
-
+    
 const [state,dispatch]  = useReducer(cartReducer, initialState)
 
 return (

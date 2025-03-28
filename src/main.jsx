@@ -10,6 +10,7 @@ import Home from './pages/home/Home.jsx'
 import { RouterProvider } from 'react-router'
 import banner2 from './assets/banner2.jpg'
 import banner3 from './assets/banner3.jpg'
+import { CartProvider } from './context/CartContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -49,7 +50,8 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')).render(
+  <CartProvider>
   <RouterProvider router={router}>
-    <App />
-  </RouterProvider>,
+  </RouterProvider>
+  </CartProvider>,
 )
