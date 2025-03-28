@@ -15,6 +15,8 @@ const CartProvider = ({children}) => {
 
             case 'ADD_ITEM':
                 // If the item already in the cart, I will increase the quantity
+                console.log(action.payload.item.id)
+                console.log(state.cart)
                 const existingItemIndexAdd = state.cart.findIndex(item => item.item.id === action.payload.item.id)
                
                 // If Item is in the cart (If it is !== -1, it is in the cart)
@@ -25,7 +27,7 @@ const CartProvider = ({children}) => {
                    // Update back the cart in state
                    return {
                     ...state,
-                    cart:updatedCart
+                    updatedCart
                    }
                 }
                 else {
@@ -43,7 +45,7 @@ const CartProvider = ({children}) => {
                 // Check the quantity, if  the quantity is 1 = I will remove it from the cart
                 const existingItemIndexDel = state.cart.findIndex(val=>val.item.id === action.payload.item.id)
                 if (existingItemIndexDel >= -1){
-                    const updatedCart = [...updatedCart];
+                    const updatedCart = [...state.cart];
                     if (updatedCart[existingItemIndexDel].quantity > 1){
                         updatedCart[existingItemIndexDel].quantity -= 1
                         return {
@@ -55,7 +57,7 @@ const CartProvider = ({children}) => {
                         // remove the item from the cart
                         return {
                             ...state,
-                            cart:state.cart.filter(val=> val.item.id !== action.payload.id)
+                            cart:state.cart.filter(val=> val.item.id !== action.payload.item.id)
                         }
                     }
                 }

@@ -14,9 +14,9 @@ const CartItem = ({cartItem}) => {
                 <h4>{cartItem.item.title}</h4>
                 <p>USD {cartItem.item.price}</p>
                 <p>
-                    <button className='btn' onClick={()=> dispatch({type:'REMOVE_ITEM', payload:{item:cartItem, quantity:1}})}>-</button>
+                    <button className='btn' onClick={()=> dispatch({type:'REMOVE_ITEM', payload:{item:cartItem.item, quantity:1}})}>-</button>
                     {cartItem.quantity}
-                    <button className='btn' onClick={()=>dispatch({type:'ADD_ITEM', payload:{item:cartItem,quantity:1}})}>+</button>
+                    <button className='btn' onClick={()=>dispatch({type:'ADD_ITEM', payload:{item:cartItem.item,quantity:1}})}>+</button>
                 </p>
             </div>
         </div>
