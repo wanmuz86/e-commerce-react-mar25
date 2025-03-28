@@ -1,17 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Card.css' // <- for custom styles
 
-const Card = ({product}) => {
+const Card = ({ product }) => {
   return (
-    <div className="card">
-        <img src={product.image} className="card-img-top" alt="..."/>
-        <div className="card-body">
-    <h5 className="card-title">{product.title}</h5>
-    <p className="card-text">{product.category} - USD {product.price}</p>
-    <Link to={`./product/${product.id}`} className="btn btn-primary">More Detail</Link>
-    <button className="btn btn-secondary">Add to cart</button>
-  </div>
-</div>
+    <div className="card product-card h-100">
+      <img
+        src={product.image}
+        className="card-img-top p-3"
+        alt={product.title}
+      />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{product.title}</h5>
+        <p className="card-text text-muted mb-1">{product.category}</p>
+        <p className="card-text fw-bold text-primary">USD {product.price}</p>
+        <div className="mt-auto d-flex gap-2">
+          <Link to={`./product/${product.id}`} className="btn btn-sm btn-outline-primary w-100">
+            More Detail
+          </Link>
+          <button className="btn btn-sm btn-primary w-100">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
 

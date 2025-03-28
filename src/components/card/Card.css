@@ -1,0 +1,26 @@
+.product-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .product-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+  }
+  
+  .card-img-top {
+    max-height: 250px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
