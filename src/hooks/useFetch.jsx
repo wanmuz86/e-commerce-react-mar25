@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 // Creating a custom hook, called useFetch that will take url as parameter
-const useFetch = (url)=>{
+export const useFetch = (url) => {
 
     // To save the retrieved data
     const [data, setData] = useState(null)
@@ -25,6 +25,7 @@ const useFetch = (url)=>{
                     setError(true)
                 }
                 else {
+                    console.log(response.data)
                     setData(response.data)
                 }
             }
@@ -43,4 +44,3 @@ const useFetch = (url)=>{
     return {data,error,loading}
 }
 
-export default useFetch;
