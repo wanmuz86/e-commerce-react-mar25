@@ -45,9 +45,11 @@ const router = createBrowserRouter([
         path:"/cart",
         element:<Cart/>
       }
-    ]
-  }
-])
+    ],
+  }  
+],
+{ basename: '/react-final-mar25' }
+)
 
 createRoot(document.getElementById('root')).render(
   <CartProvider>
